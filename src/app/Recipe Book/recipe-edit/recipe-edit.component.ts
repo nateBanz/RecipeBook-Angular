@@ -3,6 +3,8 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RbookService} from '../../rbook.service';
 import {Ingredient} from '../../Shared/ingredient.model';
+import {Recipe} from '../recipe.model';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -13,6 +15,7 @@ export class RecipeEditComponent implements OnInit {
 id:number;
 editMode= false;
 recipeForm: FormGroup;
+recipesChanged = new Subject<Recipe>();
   constructor(private route: ActivatedRoute, private receipeS: RbookService) { }
 
   ngOnInit(): void {
@@ -58,7 +61,14 @@ recipeForm: FormGroup;
   }
 
   onSubmit(){
+    //const update = new Recipe(this.recipeForm.value['name'], this.recipeForm.value['description'], this.recipeForm.value['imagePath'], this.recipeForm.value['ingredients']);
     console.log(this.recipeForm);
+    if(this.editMode){
+      this.receipeS.updateRecipes(this.id, this.recipeForm.value);
+    }
+    else{
+      this.receipeS.addRecipes(this.recipeForm.value);
+    }
   }
   get controls() { // a getter!
     return (<FormArray>this.recipeForm.get('ingredients')).controls;

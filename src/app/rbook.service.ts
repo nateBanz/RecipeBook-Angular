@@ -13,6 +13,7 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   new Ingredient('Flour',2),
   new Ingredient("Sugar", 5),
   new Ingredient("Banana", 4)])];
+  recipesChanged = new Subject<Recipe[]>();
   constructor(private slserve: ShoppingService) { }
 
   getRecipes(){
@@ -26,5 +27,15 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   getRec(index:number){
     return this.AllRecipes[index];
 
+  }
+
+  addRecipes(recipes: Recipe){
+    this.AllRecipes.push(recipes);
+    this.recipesChanged.next(this.AllRecipes.slice());
+  }
+
+  updateRecipes(index: number, updatedRecipe: Recipe){
+    this.AllRecipes[index]= updatedRecipe;
+    this.recipesChanged.next(this.AllRecipes.slice());
   }
 }

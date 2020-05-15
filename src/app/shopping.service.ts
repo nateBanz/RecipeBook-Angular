@@ -34,4 +34,6 @@ export class ShoppingService {
     this.ingredientChange.next(this.ingredients.slice());
 
   }
+
+
 }
