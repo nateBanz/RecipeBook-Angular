@@ -46,7 +46,7 @@ import { RecipeEditComponent } from './Recipe Book/recipe-edit/recipe-edit.compo
     ReactiveFormsModule
 
   ],
-  providers: [RbookService,ShoppingService],
+  providers: [RbookService,ShoppingService, RbookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

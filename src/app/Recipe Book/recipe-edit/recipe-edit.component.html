@@ -4,7 +4,7 @@
       <div class ="form-row">
         <div class = "col-md-12">
           <button type = "submit" class = "btn btn-success" [disabled]="recipeForm.invalid"> Save </button>
-          <button type = "button" class = "btn btn-danger ml-1"> Cancel </button>
+          <button type = "button" class = "btn btn-danger ml-1" (click)="onCancel()"> Cancel </button>
         </div>
       </div>
       <div class = 'form-row'>
@@ -27,13 +27,14 @@
               type = "text"
               id = "imagePath"
               formControlName="imagePath"
-              class="form-control">
+              class="form-control"
+            #imagePath>
           </div>
 
       </div>
       <div class = 'form-row'>
         <div class = "col-md-12">
-        <img src = "" class = "img-responsive" alt = "">
+        <img [src] = "imagePath.value" class = "card-img" alt = "">
         </div>
       </div>
       <div class = 'form-row'>
@@ -73,7 +74,7 @@
                   </label>
                 </div>
 
-                <div class = "form-group col-md-2 col-xs-2 text-right">
+                <div (click)="deleteIngredient(i)" class = "form-group col-md-2 col-xs-2 text-right">
                   <button type = "button" class = " btn btn-danger">X</button>
                 </div>
 

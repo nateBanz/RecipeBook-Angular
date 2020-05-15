@@ -38,4 +38,9 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
     this.AllRecipes[index]= updatedRecipe;
     this.recipesChanged.next(this.AllRecipes.slice());
   }
+
+  onDelete(index:number){
+    this.AllRecipes.splice(index,1);
+    this.recipesChanged.next(this.AllRecipes.slice());
+  }
 }

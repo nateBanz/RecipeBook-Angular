@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Route, Router} from '@angular/router';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RbookService} from '../../rbook.service';
 import {Ingredient} from '../../Shared/ingredient.model';
@@ -15,8 +15,8 @@ export class RecipeEditComponent implements OnInit {
 id:number;
 editMode= false;
 recipeForm: FormGroup;
-recipesChanged = new Subject<Recipe>();
-  constructor(private route: ActivatedRoute, private receipeS: RbookService) { }
+
+  constructor(private router: Router, private route: ActivatedRoute, private receipeS: RbookService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -27,6 +27,7 @@ recipesChanged = new Subject<Recipe>();
       }
     );
   }
+
   private initForom(){
     let image = '';
     let descript = '';
@@ -69,7 +70,9 @@ recipesChanged = new Subject<Recipe>();
     else{
       this.receipeS.addRecipes(this.recipeForm.value);
     }
+    this.onCancel();
   }
+
   get controls() { // a getter!
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
@@ -81,6 +84,14 @@ recipesChanged = new Subject<Recipe>();
         'amount': new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
       })
     )
+  }
+
+  onCancel(){
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
+  deleteIngredient(index: number){
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 
 }

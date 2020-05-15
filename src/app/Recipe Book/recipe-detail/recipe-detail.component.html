@@ -24,7 +24,7 @@
         <div *dropdownMenu class="dropdown-menu dropdown-menu-lg-right">
           <a class="dropdown-item" (click)="AddToShopping()" style="cursor: pointer">To Shopping list</a>
           <a (click) = "editRecipe()" style="cursor: pointer" class="dropdown-item" >Edit Recipe</a>
-          <a style="cursor: pointer" class="dropdown-item" >Delete Recipe</a>
+          <a style="cursor: pointer" class="dropdown-item" (click)="deleteRecipe()" >Delete Recipe</a>
         </div>
       </div>
     </div>
