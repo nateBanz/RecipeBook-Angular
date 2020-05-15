@@ -1,0 +1,16 @@
+<div class="card bg-light " style = "max-width: 24rem">
+  <div class = "row no-gutters">
+    <div class = "col-lg-7">
+
+      <div class = "card-body">
+        <h4 class ="card-title">{{rec.name}}</h4>
+        <p class = "card-text">{{rec.description}}</p>
+      </div>
+
+    </div>
+
+    <div class = "col-lg-5">
+      <a [routerLink]="[index]" routerLinkActive="active" style="cursor:pointer;"  class = "stretched-link"><img [src] = "rec.imagePath" alt = "" class="card-img pt-1"></a>
+    </div>
+  </div>
+</div>

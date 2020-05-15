@@ -1,0 +1,87 @@
+
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div class = "container">
+      <div class ="form-row">
+        <div class = "col-md-12">
+          <button type = "submit" class = "btn btn-success"> Save </button>
+          <button type = "button" class = "btn btn-danger ml-1"> Cancel </button>
+        </div>
+      </div>
+      <div class = 'form-row'>
+        <div class = "form-group col-md-12">
+
+            <label for = "name"> Name </label>
+            <input
+              type = "text"
+              id = "name"
+              formControlName="name"
+              class="form-control">
+
+        </div>
+      </div>
+      <div class = 'form-row'>
+
+          <div class = "form-group col-md-12">
+            <label for = "imagePath"> Image </label>
+            <input
+              type = "text"
+              id = "imagePath"
+              formControlName="imagePath"
+              class="form-control">
+          </div>
+
+      </div>
+      <div class = 'form-row'>
+        <div class = "col-md-12">
+        <img src = "" class = "img-responsive" alt = "">
+        </div>
+      </div>
+      <div class = 'form-row'>
+
+          <div class = "form-group col-md-12">
+            <label for = "description"> Description </label>
+            <textarea
+              formControlName="description"
+              id = "description"
+              class="form-control"
+              rows = "6"></textarea>
+          </div>
+
+      </div>
+
+      <div formArrayName="ingredients">
+        <div class = 'form-row text-left'  *ngFor="let ingedientsctrl of controls; let i = index"
+             [formGroupName]="i">
+             <div class = "form-group col-md-6 col-xs-8" >
+                 <label for =  "texter">
+                   <input
+                     id = "texter"
+                     type = "text"
+                     class = "form-control"
+                   formControlName="name">
+                 </label>
+             </div>
+
+
+                <div class = "form-group col-md-4 col-xs-2">
+                  <label for = "numbers">
+                    <input
+                      id = "numbers"
+                      type = "number"
+                      class = "form-control pr-5"
+                    formControlName="amount">
+                  </label>
+                </div>
+
+                <div class = "form-group col-md-2 col-xs-2 text-right">
+                  <button type = "button" class = " btn btn-danger">X</button>
+                </div>
+
+             </div>
+        </div>
+      </div>
+
+</form>
+
+
+

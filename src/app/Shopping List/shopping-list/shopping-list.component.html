@@ -1,0 +1,17 @@
+<div class ="row">
+  <div class = "col-xl-10">
+    <app-edit ></app-edit>
+    <hr>
+
+
+    <ul class="list-group">
+      <li *ngFor = "let ing of ingredients; let i = index" style="list-style-type: none">
+      <a class = list-group-item style = "cursor: pointer;" (click)="onEdit(i)">
+      {{ing.name}}({{ing.amount}})
+      </a>
+      </li>
+    </ul>
+
+
+  </div>
+</div>
