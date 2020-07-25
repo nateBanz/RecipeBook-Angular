@@ -11,8 +11,8 @@
         <li class="nav-item dropdown ml-auto pr-5" dropdown>
           <a dropdownToggle class="nav-link dropdown-toggle" role="button" id = "navbarDropdown" data-toggle="dropdown" data-display ="static" aria-haspopup="true" aria-expanded="false">Dropdown </a>
           <div *dropdownMenu class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" style="cursor: pointer" >Action</a>
-            <a class="dropdown-item" style="cursor: pointer">Another action</a>
+            <a class="dropdown-item" style="cursor: pointer" (click) = "onSaveData()" >Save Data</a>
+            <a class="dropdown-item" style="cursor: pointer" (click) = "onFetchRecipes()">Fetch Data</a>
           </div>
       </ul>
 

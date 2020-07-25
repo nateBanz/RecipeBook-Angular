@@ -19,7 +19,7 @@ import {ShoppingService} from './shopping.service';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { RecipeStartComponent } from './Recipe Book/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './Recipe Book/recipe-edit/recipe-edit.component';
-
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { RecipeEditComponent } from './Recipe Book/recipe-edit/recipe-edit.compo
     CollapseModule.forRoot(),
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [RbookService,ShoppingService, RbookService],

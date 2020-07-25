@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {RbookService} from '../../rbook.service';
 
 @Component({
   selector: 'app-head',
@@ -8,12 +9,14 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class HeadComponent implements OnInit {
   @Output() choose:EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private recipeService: RbookService ) { }
 
-  ngOnInit(): void {
+  onSaveData(){
+    this.recipeService.storeRecipes();
   }
 
-  isCollapsed = true;
-
+  onFetchRecipes(){
+    this.recipeService.fetchRecipes().subscribe();
+  }
 
 }
