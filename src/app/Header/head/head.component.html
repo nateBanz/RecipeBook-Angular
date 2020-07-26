@@ -7,6 +7,7 @@
 
       <ul class ="navbar-nav collapse navbar-collapse mr-auto">
         <li routerLinkActive="active" class = "nav-item"><a routerLink="/recipes"  class ="nav-link btn"> Recipes</a></li>
+        <li routerLinkActive="active" class = "nav-item"><a [routerLink] = "['/auth']" class ="nav-link btn" > Authenticate</a></li>
         <li routerLinkActive="active" class = "nav-item"><a [routerLink] = "['/shopping-list']" class ="nav-link btn" > Shopping List</a></li>
         <li class="nav-item dropdown ml-auto pr-5" dropdown>
           <a dropdownToggle class="nav-link dropdown-toggle" role="button" id = "navbarDropdown" data-toggle="dropdown" data-display ="static" aria-haspopup="true" aria-expanded="false">Dropdown </a>

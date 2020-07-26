@@ -20,6 +20,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import { RecipeStartComponent } from './Recipe Book/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './Recipe Book/recipe-edit/recipe-edit.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     RecipeComponent,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
 
   ],
   imports: [
