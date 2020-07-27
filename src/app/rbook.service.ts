@@ -3,9 +3,11 @@ import {Recipe} from './Recipe Book/recipe.model';
 import {Ingredient} from './Shared/ingredient.model';
 import {ShoppingService} from './shopping.service';
 import {Subject} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
-import {map, tap} from 'rxjs/operators';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {exhaustMap, map, take, tap} from 'rxjs/operators';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {AuthService} from './auth/auth.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,9 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   new Ingredient("Sugar", 5),
   new Ingredient("Banana", 4)])];
   recipesChanged = new Subject<Recipe[]>();
-  constructor(private slserve: ShoppingService, private http: HttpClient) { }
+
+  constructor(private slserve: ShoppingService, private http: HttpClient, private authService: AuthService) { }
+
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
     const recipes = this.getRecipes();
     if (recipes.length == 0){
@@ -63,8 +67,9 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   }
 
   fetchRecipes(){
-    return this.http.get<Recipe[]>('https://recipebook-7ae2a.firebaseio.com/recipes.json')
-      .pipe(
+
+      return this.http.get<Recipe[]>('https://recipebook-7ae2a.firebaseio.com/recipes.json',
+        ).pipe(
         map(recipes => {
         return recipes.map(recipe=>{
           //get the existing data, if ingredients has ingredients in the array, it stays as is. Otherwise, itll set ingredients to an empty array rather than being nonexistent
