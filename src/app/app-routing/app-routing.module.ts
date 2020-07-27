@@ -7,16 +7,21 @@ import {RecipeStartComponent} from '../Recipe Book/recipe-start/recipe-start.com
 import {RecipeDetailComponent} from '../Recipe Book/recipe-detail/recipe-detail.component';
 import {RecipeEditComponent} from '../Recipe Book/recipe-edit/recipe-edit.component';
 import {RbookService} from '../rbook.service';
+import {AuthComponent} from '../auth/auth.component';
+import {AuthGuard} from '../auth/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch:'full'},
-  { path: 'recipes', component:RecipeComponent, children:[
+  { path: 'recipes', component:RecipeComponent,
+    canActivate: [AuthGuard],
+    children:[
       {path: '', component: RecipeStartComponent},
       {path: 'new', component: RecipeEditComponent},
       {path: ':id', component: RecipeDetailComponent, resolve: [RbookService]},
       {path: ':id/edit', component: RecipeEditComponent, resolve: [RbookService]}
     ] },
-  {path: 'shopping-list', component: ShoppingLIstComponent }
+  {path: 'shopping-list', component: ShoppingLIstComponent },
+  {path: 'auth', component: AuthComponent}
 ];
 
 
