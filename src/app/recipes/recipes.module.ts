@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RecipeListComponent} from '../Recipe Book/recipe-list/recipe-list.component';
 import {RecipeItemComponent} from '../Recipe Book/recipe-item/recipe-item.component';
 import {RecipeDetailComponent} from '../Recipe Book/recipe-detail/recipe-detail.component';
@@ -10,6 +9,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthGuard} from '../auth/auth.guard';
 import {RbookService} from '../rbook.service';
+import {SharedModule} from '../Shared/shared.module';
 
 const routes: Routes = [
   { path: 'recipes', component:RecipeComponent,
@@ -35,7 +35,7 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     FormsModule
   ],

@@ -10,8 +10,8 @@ import {Subscription} from 'rxjs';
 })
 export class HeadComponent implements OnInit, OnDestroy{
   @Output() choose:EventEmitter<any> = new EventEmitter<any>();
-  private userSub: Subscription;
-  private isAuth = false;
+  userSub: Subscription;
+  isAuth = false;
   constructor(private recipeService: RbookService, private auth: AuthService ) { }
   ngOnInit(){
     this.userSub = this.auth.user.subscribe( user=>{
