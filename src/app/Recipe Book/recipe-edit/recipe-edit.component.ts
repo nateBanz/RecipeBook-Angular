@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params, Route, Router} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {RbookService} from '../../rbook.service';
-import {Ingredient} from '../../Shared/ingredient.model';
-import {Recipe} from '../recipe.model';
-import {Subject} from 'rxjs';
+
 
 @Component({
   selector: 'app-recipe-edit',

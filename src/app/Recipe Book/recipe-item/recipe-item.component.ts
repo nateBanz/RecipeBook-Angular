@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Recipe} from '../recipe.model';
-import {RbookService} from '../../rbook.service';
+
 
 @Component({
   selector: 'app-recipe-item',
