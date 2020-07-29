@@ -13,11 +13,12 @@ import { HttpClientModule} from '@angular/common/http';
 
 
 
-import {RecipesModule} from './recipes/recipes.module';
+
 import {ShoppingListModule} from './Recipe Book/shopping-list/shopping-list.module';
 import {SharedModule} from './Shared/shared.module';
 import {CoreModule} from './core/core.module';
 import {AuthModule} from './auth/auth.module';
+import {RecipesModule} from './recipes/recipes.module';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,11 @@ import {AuthModule} from './auth/auth.module';
     NgxPopper,
     AppRoutingModule,
     HttpClientModule,
-    RecipesModule,
     ShoppingListModule,
     SharedModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    RecipesModule
 
   ],
   providers: [],
