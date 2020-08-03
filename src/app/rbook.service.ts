@@ -3,8 +3,8 @@ import {Recipe} from './Recipe Book/recipe.model';
 import {Ingredient} from './Shared/ingredient.model';
 import {ShoppingService} from './shopping.service';
 import {Subject} from 'rxjs';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {exhaustMap, map, take, tap} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import { map, tap} from 'rxjs/operators';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {AuthService} from './auth/auth.service';
 
@@ -20,6 +20,8 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   new Ingredient("Banana", 4)])];
   recipesChanged = new Subject<Recipe[]>();
 
+  private randomImages = ['https://i.pinimg.com/originals/d3/36/d6/d336d6c4d2c3ec833100c546275f9ba8.jpg',
+    'https://www.thinkeatdrink.com/wp-content/uploads/2014/10/shawarma.jpg'];
   constructor(private slserve: ShoppingService, private http: HttpClient, private authService: AuthService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
@@ -86,5 +88,9 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
     this.AllRecipes = recipes;
     this.recipesChanged.next(this.AllRecipes.slice());
 
+  }
+
+  getRandomImages(){
+    return this.randomImages;
   }
 }

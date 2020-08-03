@@ -1,0 +1,28 @@
+#foot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+.footer{
+
+  display: block;
+  font-size: 80%;
+  color: #6c757d;
+}
+
+
+
+#bodycolor {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1D1C1E;
+}
+
+#left{
+  background-color: #A07ADF;
+}
+
+#right{ background-color: #FFD34D;
+
+}

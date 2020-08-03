@@ -1,9 +1,5 @@
 <nav class = "navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
-
-
   <a class = "navbar-brand" href ="#">Recipe Book</a>
-
-
 
       <ul class ="navbar-nav collapse navbar-collapse mr-auto">
         <li routerLinkActive="active" class = "nav-item" *ngIf="isAuth"><a routerLink="/recipes"  class ="nav-link btn"> Recipes</a></li>
@@ -23,3 +19,14 @@
 
 
 </nav>
+
+<div class = "row">
+  <div class = "col-md-12 mx-auto">
+    <carousel>
+      <slide *ngFor="let image of images; let i = index">
+        <img [src] = image alt = "image{{i}}" class = "d-block w-100">
+      </slide>
+    </carousel>
+  </div>
+
+</div>
