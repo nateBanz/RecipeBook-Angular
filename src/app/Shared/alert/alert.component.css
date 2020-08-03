@@ -5,7 +5,9 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
   z-index: 50;
+
 }
 .alert-box{
   position: fixed;
@@ -14,8 +16,10 @@
   width: 60vw;
   padding: 16px;
   z-index: 100;
-  background: white;
+  background: antiquewhite;
   box-shadow: 0 2px 8px rgba(0,0,0,.26);
+  color: black;
+  border-radius: 10px;
 }
 .alert-box-actions{
   text-align:right;
