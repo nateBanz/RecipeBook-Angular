@@ -22,6 +22,11 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
 
   private randomImages = ['https://i.pinimg.com/originals/d3/36/d6/d336d6c4d2c3ec833100c546275f9ba8.jpg',
     'https://www.thinkeatdrink.com/wp-content/uploads/2014/10/shawarma.jpg'];
+
+  private show: boolean = false;
+
+  formatDiv = new Subject<boolean>();
+
   constructor(private slserve: ShoppingService, private http: HttpClient, private authService: AuthService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
@@ -92,5 +97,18 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
 
   getRandomImages(){
     return this.randomImages;
+  }
+
+  showDiv(){
+    //change the value then emit the opposite to something else to subscribe to. If the value doesnt change, the function will emit the same thing every time.
+    this.show = !this.show;
+    this.formatDiv.next(!this.show);
+  }
+
+  getShow(){
+    return this.show;
+  }
+  setDiv(){
+    this.show = false;
   }
 }

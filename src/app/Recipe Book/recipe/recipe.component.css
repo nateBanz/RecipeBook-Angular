@@ -4,12 +4,12 @@ height: 40vh;
   overflow-y: auto;
   overflow-x: hidden;
   margin-top: 5%;
-  box-shadow: 2px 2px 8px 3px #fff;
+  box-shadow: 2px 2px 8px 1px #1D1C1E;
 
 }
 
 ::-webkit-scrollbar {
-width: 10px;
+width: 6px;
 }
 
 ::-webkit-scrollbar-track{

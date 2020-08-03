@@ -3,7 +3,7 @@
     <app-recipe-list></app-recipe-list>
   </div>
 
-  <div class = "col-xs-8 mx-auto" id = "right">
-    <router-outlet></router-outlet>
+  <div *ngIf="show" class = "col-xs-8 mx-auto" id = "right">
+    <router-outlet *ngIf="show"></router-outlet>
   </div>
 </div>
