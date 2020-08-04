@@ -1,5 +1,9 @@
 
 img {
-  height: 200px;
+  height: 25vh;
   object-fit: cover;
+}
+
+a:hover {
+  color: black;
 }

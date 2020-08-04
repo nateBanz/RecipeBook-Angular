@@ -21,7 +21,8 @@ private AllRecipes:Recipe[] = [new Recipe("Fritters","Such a good food to eat!",
   recipesChanged = new Subject<Recipe[]>();
 
   private randomImages = ['https://i.pinimg.com/originals/d3/36/d6/d336d6c4d2c3ec833100c546275f9ba8.jpg',
-    'https://www.thinkeatdrink.com/wp-content/uploads/2014/10/shawarma.jpg'];
+    'https://www.thinkeatdrink.com/wp-content/uploads/2014/10/shawarma.jpg', 'https://images.unsplash.com/photo-1537200900027-35a21559e661?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+  , 'https://images.unsplash.com/photo-1504388192519-fb4be897c4d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80'];
 
   private show: boolean = false;
 

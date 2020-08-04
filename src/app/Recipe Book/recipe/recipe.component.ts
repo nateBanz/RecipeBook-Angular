@@ -9,7 +9,7 @@ import {RbookService} from '../../rbook.service';
   styleUrls: ['./recipe.component.css']
 })
 export class RecipeComponent implements OnInit {
-  private show: boolean;
+   show: boolean;
 
   constructor(private recipe: RbookService) {
   }

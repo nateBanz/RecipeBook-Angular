@@ -1,4 +1,4 @@
-<nav class = "navbar sticky-top navbar-expand-sm navbar-dark bg-dark ">
+<nav class = "navbar sticky-top navbar-expand navbar-dark bg-dark ">
   <a class = "navbar-brand" href ="#">Recipe Book</a>
 
       <ul class ="navbar-nav collapse navbar-collapse mr-auto">
@@ -6,12 +6,13 @@
         <li routerLinkActive="active" class = "nav-item" *ngIf="!isAuth"><a [routerLink] = "['/auth']" class ="nav-link btn" > Authenticate</a></li>
         <li routerLinkActive="active" class = "nav-item"><a [routerLink] = "['/shopping-list']" class ="nav-link btn" > Shopping List</a></li>
 
-        <li class="nav-item ml-auto pr-4" *ngIf="isAuth"><a class = "nav-link btn" style  = "cursor: pointer;" (click) = "logout()">Logout</a></li>
+        <li class="nav-item mx-auto" *ngIf="isAuth"><button type = "button" class = "btn btn-outline-danger btn-sm"><a class = "nav-link btn" style  = "cursor: pointer;" (click) = "logout()">Logout</a></button></li>
 
         <li *ngIf="isAuth" class="nav-item dropdown ml-auto pr-5" dropdown>
-          <a dropdownToggle class="nav-link dropdown-toggle" role="button" id = "navbarDropdown" data-toggle="dropdown" data-display ="static" aria-haspopup="true" aria-expanded="false">Manage</a>
-          <div *dropdownMenu class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" style="cursor: pointer" (click) = "onSaveData()" >Save Data</a>
+          <a dropdownToggle style="cursor: pointer" class="nav-link dropdown-toggle" role="button" id = "navbarDropdown" data-toggle="dropdown" data-display ="static" aria-haspopup="true" aria-expanded="false">Manage</a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-lg-right text-muted bg-dark" style ="
+            cursor: pointer;" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" style="cursor: pointer;" (click) = "onSaveData()" >Save Data</a>
             <a class="dropdown-item" style="cursor: pointer" (click) = "onFetchRecipes()">Fetch Data</a>
           </div>
       </ul>
@@ -22,7 +23,7 @@
 
 <div class = "row">
   <div class = "col-md-12 mx-auto">
-    <carousel>
+    <carousel [showIndicators]="false" >
       <slide *ngFor="let image of images; let i = index">
         <img [src] = image alt = "image{{i}}" class = "d-block w-100">
       </slide>

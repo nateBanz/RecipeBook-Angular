@@ -1,7 +1,7 @@
-<div class="row" id = "main">
-  <div class="col-xs-12 col-md-6 offset-4">
+<div class="row mx-auto" id = "main" >
+  <div class="col-xs-12 col-md-6 offset-3">
     <app-alert [message]="error" *ngIf="error" (close)="handleError()"></app-alert>
-    <div *ngIf="isLoading" style = "text-align: center;">
+    <div *ngIf="isLoading" class = "col-xs-12 col-md-6 ">
       <app-loading-spinner></app-loading-spinner>
     </div>
     <form #authForm = "ngForm" (ngSubmit)="submitForm(authForm)" *ngIf="!isLoading" class ="mt-4">
@@ -20,9 +20,9 @@
         name = "password"
         required
         minlength = "6">
-        <small id="passwordHelpBlock" class="form-text text-muted col md-4">Your password must be 6 characters or more</small>
+        <small id="passwordHelpBlock" class="form-text text-muted col-xs-4">Your password must be 6 characters or more</small>
       </div>
-      <div class = "form-group ml-3">
+      <div class = "form-group mx-auto">
         <button class = "btn btn-primary " type="submit" [disabled] = "!authForm.valid">{{isLoginMode? 'Login': 'Sign Up'}}</button> |
 
 

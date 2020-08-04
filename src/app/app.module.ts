@@ -8,7 +8,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './Shared/shared.module';
 import {CoreModule} from './core/core.module';
-import {CarouselModule} from 'ngx-bootstrap';
+import {CarouselModule} from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './Footer/footer/footer.component';
 
 
