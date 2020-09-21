@@ -1,6 +1,6 @@
 # RBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0. A user can create a recipe and save it to be viewed again. Any ingredients added will be automatically added to the shopping list where you can delete or add more ingredients you may need. 
 
 ## Development server
 
